@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:nettyrpc="http://www.zhongwenjie.org/mysimplenettyrpc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.zhongwenjie.org/mysimplenettyrpc
+       http://www.zhongwenjie.org/mysimplenettyrpc/nettyrpc.xsd">
+    
+    <bean id="sumService" class="org.zhongwenjie.rpc.services.impl.SumServiceImpl"></bean>
+    
+    <nettyrpc:service interfaceName="org.zhongwenjie.rpc.services.SumService" ref="sumService" />
+    
+    <nettyrpc:register id="register" ipAddr="127.0.0.1:10000" protocol="JDKSERIALIZE" />
+
+</beans>
